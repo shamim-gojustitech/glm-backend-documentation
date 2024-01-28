@@ -486,7 +486,6 @@ The project follows a modular structure:
 
   ~~~json
   {
-    "accountID": "A12345",
     "date": "2024-01-20",
     "project_name": "Sample Project",
     "khotiyan_name": "Khotiyan ABC",
@@ -762,7 +761,7 @@ The project follows a modular structure:
                 "_id": "65acfc09360a2ed76aa9ea8f"
             }
         ],
-        "papers": [
+        "dolil": [
             {
                 "name": "Paper1",
                 "type": "Type1",
@@ -865,7 +864,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "papers": [
+                "dolil": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -945,7 +944,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "papers": [
+                "dolil": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -1295,7 +1294,6 @@ The project follows a modular structure:
 
   ~~~json
   {
-    "accountID": "A12345",
     "date": "2024-01-20",
     "project_name": "Sample Project",
     "khotiyan_name": "Khotiyan ABC",
@@ -1474,7 +1472,7 @@ The project follows a modular structure:
                 "_id": "65acfc09360a2ed76aa9ea8f"
             }
         ],
-        "papers": [
+        "dolil": [
             {
                 "name": "Paper1",
                 "type": "Type1",
@@ -1577,7 +1575,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "papers": [
+                "dolil": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -1655,7 +1653,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "papers": [
+                "dolil": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
