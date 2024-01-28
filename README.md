@@ -80,7 +80,7 @@ The project follows a modular structure:
 
 ### 1. Create Khotiyan
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/khotiyan/create
     ```
 - **Method:** `POST`
@@ -115,7 +115,7 @@ The project follows a modular structure:
     ```
 ### 2. Find all Khotiyan
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/khotiyan/find/all
     ```
 - **Method:** `GET`
@@ -155,7 +155,7 @@ The project follows a modular structure:
     <hr>
 ### 3. Update Khotiyan
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/khotiyan/update/:khotiyanID
     ```
 - **Method:** `PUT`
@@ -198,7 +198,7 @@ The project follows a modular structure:
 
 ### 4. Delete a Khotiyan
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/khotiyan/delete/:khotiyanID
     ```
 - **Method:** `DELETE`
@@ -237,7 +237,7 @@ The project follows a modular structure:
 
 ### 1. Create Project
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/project/create
     ```
 - **Method:** `POST`
@@ -270,7 +270,7 @@ The project follows a modular structure:
     ```
 ### 2. Find all Project
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/project/find/all
     ```
 - **Method:** `GET`
@@ -309,7 +309,7 @@ The project follows a modular structure:
 
 ### 3. Update Project
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/project/update/:projectID
     ```
 - **Method:** `PUT`
@@ -351,7 +351,7 @@ The project follows a modular structure:
 
 ### 4. Delete a project
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002/admin/project/delete/:projectID
     ```
 - **Method:** `DELETE`
@@ -390,7 +390,7 @@ The project follows a modular structure:
 ### 1. Create Account
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//accounts/create
     ```
 - **Method:** `POST`
@@ -447,7 +447,7 @@ The project follows a modular structure:
 ### 2. View All Accounts
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//accounts/find/all
     ```
 - **Method:** `GET`
@@ -487,7 +487,7 @@ The project follows a modular structure:
 ### 3. View Account by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//accounts/find/:accountID
     ```
 - **Method:** `GET`
@@ -533,7 +533,7 @@ The project follows a modular structure:
 ### 4. Update Account by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//accounts/update/:accountID
     ```
 - **Method:** `PUT`
@@ -592,7 +592,7 @@ The project follows a modular structure:
 ### 5. Delete Account by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//accounts/delete/:accountID
     ```
 - **Method:** `DELETE`
@@ -630,7 +630,7 @@ The project follows a modular structure:
 ### 1. Create Paper
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//admin/papers/create
     ```
 - **Method:** `POST`
@@ -726,7 +726,7 @@ The project follows a modular structure:
 ### 2. View All Papers
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//admin/papers/find/all
     ```
 - **Method:** `GET`
@@ -805,7 +805,7 @@ The project follows a modular structure:
 ### 3. View Paper by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//admin/papers/find/:paperID
     ```
 - **Method:** `GET`
@@ -893,7 +893,7 @@ The project follows a modular structure:
 ### 4. Update Paper by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//admin/papers/update/:paperID
     ```
 - **Method:** `PUT`
@@ -941,7 +941,7 @@ The project follows a modular structure:
 ### 5. Delete Paper by ID
 
 - **Endpoint:** 
-    ```json
+    ```md
     143.110.190.164:3002//admin/papers/delete/:paperID
     ```
 - **Method:** `DELETE`
