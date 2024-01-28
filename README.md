@@ -38,6 +38,12 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [3. View Paper by ID](#3-view-paper-by-id)
     - [4. Update Paper by ID](#4-update-paper-by-id)
     - [5. Delete Paper by ID](#5-delete-paper-by-id)
+  - [Sale Section](#sale-section)
+    - [1. Create Sales](#1-create-sales)
+    - [2. View All Sales](#2-view-all-sales)
+    - [3. View Sale by ID](#3-view-sale-by-id)
+    - [4. Update Sale by ID](#4-update-sale-by-id)
+    - [5. Delete Paper by ID](#5-delete-paper-by-id-1)
 - [Employee](#employee)
   - [Khotiyan](#khotiyan-1)
     - [1. Create Khotiyan](#1-create-khotiyan-1)
@@ -55,6 +61,9 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [1. Create Paper](#1-create-paper-1)
     - [2. View All Papers](#2-view-all-papers-1)
     - [3. View Paper by ID](#3-view-paper-by-id-1)
+    - [1. Create Sales](#1-create-sales-1)
+    - [2. View All Sales](#2-view-all-sales-1)
+    - [3. View Sale by ID](#3-view-sale-by-id-1)
 
 ## Features
 
@@ -1065,6 +1074,339 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
+## Sale Section
+
+### 1. Create Sales
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/create
+    ```
+- **Method:** `POST`
+- **Description:** Create a new sale.
+- **Request Format:** `application/json`
+  ~~~json
+  {
+    "mouja_name": "aa",
+        "project_name": "aa",
+        "mot_jomir_poriman": 15,
+        "date": "2024-01-28T00:00:00.000Z",
+        "price": 150000,
+        "plot_number": "Plot-001",
+        "grohitas": [
+            {
+                "name": "Grohita1",
+                "_id": "65b641ac0bde095806b8d757"
+            },
+            {
+                "name": "Grohita2",
+                "_id": "65b641ac0bde095806b8d758"
+            }
+        ],
+        "datas": [
+            {
+                "name": "aa",
+                "_id": "65b641ac0bde095806b8d759"
+            },
+            {
+                "name": "bb",
+                "_id": "65b641ac0bde095806b8d75a"
+            }
+        ]
+  }
+  ~~~
+
+- **Response Format:** `application/json`
+
+  - **Success Code:** `201`
+
+    ~~~json
+    {
+      "success": "Operation successful."
+    }
+    ~~~
+
+  - **Error Code:** `400`
+
+    ~~~json
+    {
+      "error": "Input errors: 'field-name' - required"
+    }
+    ~~~
+
+  - **Error Code:** `409`
+
+    ~~~json
+    {
+      "error": "Duplicate error: paperID: SAL000001"
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 2. View All Sales
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/find/all
+    ```
+- **Method:** `GET`
+- **Description:** View all sales' data.
+- **Response Format:** `application/json`
+
+  - **Success Code:** `200`
+
+    ~~~json
+    {
+        "success": "Data retrieved successfully.",
+        "data": [
+          {
+            "_id": "65b641ac0bde095806b8d756",
+            "saleID": "SAL000001",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b641ac0bde095806b8d757"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b641ac0bde095806b8d758"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b641ac0bde095806b8d759"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b641ac0bde095806b8d75a"
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "65b6422f0bde095806b8d77a",
+            "saleID": "SAL000002",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b6422f0bde095806b8d77b"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b6422f0bde095806b8d77c"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b6422f0bde095806b8d77d"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b6422f0bde095806b8d77e"
+                }
+            ],
+            "__v": 0
+        },...
+      ]  
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 3. View Sale by ID
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/find/:saleID
+    ```
+- **Method:** `GET`
+- **Description:** View sales data by saleID.
+- **URL Parameter:** `saleID`: Sale's ID (Example: `/admin/sales/find/SAL000001`)
+- **Response Format:** `application/json`
+  - **Success Code:** `200`
+    ~~~json
+    {
+        "success": "Data retrieved successfully.",
+        "data": {
+            "_id": "65b641ac0bde095806b8d756",
+            "saleID": "SAL000001",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b641ac0bde095806b8d757"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b641ac0bde095806b8d758"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b641ac0bde095806b8d759"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b641ac0bde095806b8d75a"
+                }
+            ],
+            "__v": 0
+        }
+    }
+    ~~~
+
+  - **Error Code:** `404`
+
+    ~~~json
+    {
+      "error": "ID not found"
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 4. Update Sale by ID
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/update/:saleID
+    ```
+- **Method:** `PUT`
+- **Description:** Update paper data by saleID.
+- **URL Parameter:** `saleID`: Paper's ID (Example: `/admin/sale/update/SAL000001`)
+- **Request Format:** `application/json`
+
+  ~~~json
+  {
+    "mouja_name": "aa",
+    "project_name": "aa",
+    "mot_jomir_poriman": 5,
+    "date": "2024-01-29T00:00:00.000Z",
+    "price": 75000,
+    "plot_number": "Plot-002",
+    "grohitas": [
+        {
+            "name": "Grohita3",
+            "_id": "65b6654eb1f88d80ef5cd58f"
+        },
+        {
+            "name": "Grohita4",
+            "_id": "65b6654eb1f88d80ef5cd590"
+        }
+    ],
+    "datas": [
+        {
+            "name": "aa",
+            "_id": "65b6654eb1f88d80ef5cd591"
+        },
+        {
+            "name": "bb",
+            "_id": "65b6654eb1f88d80ef5cd592"
+        }
+    ]
+  }
+  ~~~
+
+- **Response Format:** `application/json`
+
+  - **Success Code:** `200`
+
+    ~~~json
+    {
+      "success": "Update successful."
+    }
+    ~~~
+
+  - **Error Code:** `404`
+
+    ~~~json
+    {
+      "error": "ID not found."
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 5. Delete Paper by ID
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/delete/:saleID
+    ```
+- **Method:** `DELETE`
+- **Description:** Delete paper data by saleID.
+- **URL Parameter:** `saleID`: Paper's ID (Example: `/admin/sale/delete/SAL000001`)
+- **Response Format:** `application/json`
+
+  - **Success Code:** `200`
+
+    ~~~json
+    {
+      "success": "Delete successful."
+    }
+    ~~~
+
+  - **Error Code:** `404`
+
+    ~~~json
+    {
+      "error": "ID not found"
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
 
 # Employee
 
@@ -1676,6 +2018,237 @@ The project follows a modular structure:
                 "__v": 0
             },
             ...
+    }
+    ~~~
+
+  - **Error Code:** `404`
+
+    ~~~json
+    {
+      "error": "ID not found"
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+
+    ## Sale Section
+
+### 1. Create Sales
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/create
+    ```
+- **Method:** `POST`
+- **Description:** Create a new sale.
+- **Request Format:** `application/json`
+  ~~~json
+  {
+    "mouja_name": "aa",
+        "project_name": "aa",
+        "mot_jomir_poriman": 15,
+        "date": "2024-01-28T00:00:00.000Z",
+        "price": 150000,
+        "plot_number": "Plot-001",
+        "grohitas": [
+            {
+                "name": "Grohita1",
+                "_id": "65b641ac0bde095806b8d757"
+            },
+            {
+                "name": "Grohita2",
+                "_id": "65b641ac0bde095806b8d758"
+            }
+        ],
+        "datas": [
+            {
+                "name": "aa",
+                "_id": "65b641ac0bde095806b8d759"
+            },
+            {
+                "name": "bb",
+                "_id": "65b641ac0bde095806b8d75a"
+            }
+        ]
+  }
+  ~~~
+
+- **Response Format:** `application/json`
+
+  - **Success Code:** `201`
+
+    ~~~json
+    {
+      "success": "Operation successful."
+    }
+    ~~~
+
+  - **Error Code:** `400`
+
+    ~~~json
+    {
+      "error": "Input errors: 'field-name' - required"
+    }
+    ~~~
+
+  - **Error Code:** `409`
+
+    ~~~json
+    {
+      "error": "Duplicate error: paperID: SAL000001"
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 2. View All Sales
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/find/all
+    ```
+- **Method:** `GET`
+- **Description:** View all sales' data.
+- **Response Format:** `application/json`
+
+  - **Success Code:** `200`
+
+    ~~~json
+    {
+        "success": "Data retrieved successfully.",
+        "data": [
+          {
+            "_id": "65b641ac0bde095806b8d756",
+            "saleID": "SAL000001",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b641ac0bde095806b8d757"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b641ac0bde095806b8d758"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b641ac0bde095806b8d759"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b641ac0bde095806b8d75a"
+                }
+            ],
+            "__v": 0
+        },
+        {
+            "_id": "65b6422f0bde095806b8d77a",
+            "saleID": "SAL000002",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b6422f0bde095806b8d77b"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b6422f0bde095806b8d77c"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b6422f0bde095806b8d77d"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b6422f0bde095806b8d77e"
+                }
+            ],
+            "__v": 0
+        },...
+      ]  
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
+### 3. View Sale by ID
+
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/sales/find/:saleID
+    ```
+- **Method:** `GET`
+- **Description:** View sales data by saleID.
+- **URL Parameter:** `saleID`: Sale's ID (Example: `/admin/sales/find/SAL000001`)
+- **Response Format:** `application/json`
+  - **Success Code:** `200`
+    ~~~json
+    {
+        "success": "Data retrieved successfully.",
+        "data": {
+            "_id": "65b641ac0bde095806b8d756",
+            "saleID": "SAL000001",
+            "mouja_name": "aa",
+            "project_name": "aa",
+            "mot_jomir_poriman": 15,
+            "date": "2024-01-28T00:00:00.000Z",
+            "price": 150000,
+            "plot_number": "Plot-001",
+            "grohitas": [
+                {
+                    "name": "Grohita1",
+                    "_id": "65b641ac0bde095806b8d757"
+                },
+                {
+                    "name": "Grohita2",
+                    "_id": "65b641ac0bde095806b8d758"
+                }
+            ],
+            "datas": [
+                {
+                    "name": "aa",
+                    "_id": "65b641ac0bde095806b8d759"
+                },
+                {
+                    "name": "bb",
+                    "_id": "65b641ac0bde095806b8d75a"
+                }
+            ],
+            "__v": 0
+        }
     }
     ~~~
 
