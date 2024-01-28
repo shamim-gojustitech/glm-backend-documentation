@@ -173,18 +173,24 @@ The project follows a modular structure:
     ```
     <hr>
 ### 3. Get Khotiyan By ID
-- **Endpoint:** `143.110.190.164:3002/admin/khotiyan/update/:khotiyanID`
+- **Endpoint:** 
+  ```md
+  143.110.190.164:3002/admin/khotiyan/find/:khotiyanID
+  ```
 - **Method:** `GET`   
 - **Description:** `Get a knotiyan by its ID`
-- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/update/KHO000002`
+- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/find/KHO000002`
 - **Response Format:** `application/json`
   - **Success Code:** `200`
     ```json
     {
         "success": "Data retrieved successfully.",
-        "data": {
-            "_id": "65b616992727a5d87840bc3b",
-            "khotiyanID": "KHO000002",
+        "data":{
+            "_id": "65b6490e9920687bfa815bb0",
+            "khotiyanID": "KHO000004",
+            "name": "John Doe",
+            "address": "123 Main Street, Cityville",
+            "mobile_number": "555-1234",
             "__v": 0
         }
     }
@@ -1141,18 +1147,24 @@ The project follows a modular structure:
     <hr>
 
 ### 3. Get Khotiyan By ID
-- **Endpoint:** `143.110.190.164:3002/employee/khotiyan/update/:khotiyanID`
+- **Endpoint:** 
+  ```md
+  143.110.190.164:3002/admin/khotiyan/find/:khotiyanID
+  ```
 - **Method:** `GET`   
 - **Description:** `Get a knotiyan by its ID`
-- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/update/KHO000002`
+- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/find/KHO000002`
 - **Response Format:** `application/json`
   - **Success Code:** `200`
     ```json
     {
         "success": "Data retrieved successfully.",
-        "data": {
-            "_id": "65b616992727a5d87840bc3b",
-            "khotiyanID": "KHO000002",
+        "data":{
+            "_id": "65b6490e9920687bfa815bb0",
+            "khotiyanID": "KHO000004",
+            "name": "John Doe",
+            "address": "123 Main Street, Cityville",
+            "mobile_number": "555-1234",
             "__v": 0
         }
     }
