@@ -482,7 +482,7 @@ The project follows a modular structure:
     ```
 - **Method:** `POST`
 - **Description:** Create a new account.
-- **Request Format:** `application/json`
+- **Request Format:** `multipart/form-data`
 
   ~~~json
   {
@@ -1435,8 +1435,7 @@ The project follows a modular structure:
     ```
 - **Method:** `POST`
 - **Description:** Create a new paper.
-- **Request Format:** `application/json`
-
+- **Request Format:** `multipart/form-data`
   ~~~json
     {
         "khotiyans": [
