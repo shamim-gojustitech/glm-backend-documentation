@@ -79,7 +79,10 @@ The project follows a modular structure:
 ## Khotiyan
 
 ### 1. Create Khotiyan
-- **Endpoint:** ```143.110.190.164:3002/admin/khotiyan/create```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/khotiyan/create
+    ```
 - **Method:** `POST`
 - **Description:** `Creates a new khotiyan.`
 - **Request Format:** `application/json`
@@ -111,7 +114,10 @@ The project follows a modular structure:
     }
     ```
 ### 2. Find all Khotiyan
-- **Endpoint:** `143.110.190.164:3002/admin/khotiyan/find/all```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/khotiyan/find/all
+    ```
 - **Method:** `GET`
 - **Description:** `Finds all the khotiyan at once.`
 - **Request Format:** `application/json`
@@ -148,7 +154,10 @@ The project follows a modular structure:
     ```
     <hr>
 ### 3. Update Khotiyan
-- **Endpoint:** `143.110.190.164:3002/admin/khotiyan/update/:khotiyanID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/khotiyan/update/:khotiyanID
+    ```
 - **Method:** `PUT`
 - **Description:** `Update an existing Khotiyan.`
 - **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/update/KHO000001`
@@ -188,7 +197,10 @@ The project follows a modular structure:
     <hr>
 
 ### 4. Delete a Khotiyan
-- **Endpoint:** `143.110.190.164:3002/admin/khotiyan/delete/:khotiyanID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/khotiyan/delete/:khotiyanID
+    ```
 - **Method:** `DELETE`
 - **Description:** `Delete an existing Khotiyan`
 - **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/delete/KHO000002`
@@ -224,7 +236,10 @@ The project follows a modular structure:
 ## Project
 
 ### 1. Create Project
-- **Endpoint:** `143.110.190.164:3002/admin/project/create```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/project/create
+    ```
 - **Method:** `POST`
 - **Description:** `Creates a new project.`
 - **Request Format:** `application/json`
@@ -254,7 +269,10 @@ The project follows a modular structure:
     }
     ```
 ### 2. Find all Project
-- **Endpoint:** `143.110.190.164:3002/admin/project/find/all```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/project/find/all
+    ```
 - **Method:** `GET`
 - **Description:** `Finds all the project at once.`
 - **Request Format:** `application/json`
@@ -290,7 +308,10 @@ The project follows a modular structure:
     <hr>
 
 ### 3. Update Project
-- **Endpoint:** `143.110.190.164:3002/admin/project/update/:projectID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/project/update/:projectID
+    ```
 - **Method:** `PUT`
 - **Description:** `Update an existing project.`
 - **URL Parameter:** `projectID`: Project's ID (Example: `admin/project/update/PRO000001`
@@ -329,7 +350,10 @@ The project follows a modular structure:
     <hr>
 
 ### 4. Delete a project
-- **Endpoint:** `143.110.190.164:3002/admin/project/delete/:projectID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002/admin/project/delete/:projectID
+    ```
 - **Method:** `DELETE`
 - **Description:** `Delete an existing project`
 - **URL Parameter:** `projectID`: Project's ID (Example: `admin/project/delete/PRO000NaN`
@@ -365,7 +389,10 @@ The project follows a modular structure:
 
 ### 1. Create Account
 
-- **Endpoint:** `143.110.190.164:3002//accounts/create```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//accounts/create
+    ```
 - **Method:** `POST`
 - **Description:** Create a new account.
 - **Request Format:** `application/json`
@@ -419,7 +446,10 @@ The project follows a modular structure:
     <hr>
 ### 2. View All Accounts
 
-- **Endpoint:** `143.110.190.164:3002//accounts/find/all```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//accounts/find/all
+    ```
 - **Method:** `GET`
 - **Description:** View all accounts' data.
 - **Response Format:** `application/json`
@@ -456,7 +486,10 @@ The project follows a modular structure:
     <hr>
 ### 3. View Account by ID
 
-- **Endpoint:** `143.110.190.164:3002//accounts/find/:accountID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//accounts/find/:accountID
+    ```
 - **Method:** `GET`
 - **Description:** View account data by accountID.
 - **URL Parameter:** `accountID`: Account's ID (Example: `/accounts/find/A12345`)
@@ -499,7 +532,10 @@ The project follows a modular structure:
     <hr>
 ### 4. Update Account by ID
 
-- **Endpoint:** `143.110.190.164:3002//accounts/update/:accountID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//accounts/update/:accountID
+    ```
 - **Method:** `PUT`
 - **Description:** Update account data by accountID.
 - **URL Parameter:** `accountID`: Account's ID (Example: `/accounts/update/A12345`)
@@ -555,7 +591,10 @@ The project follows a modular structure:
     <hr>
 ### 5. Delete Account by ID
 
-- **Endpoint:** `143.110.190.164:3002//accounts/delete/:accountID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//accounts/delete/:accountID
+    ```
 - **Method:** `DELETE`
 - **Description:** Delete account data by accountID.
 - **URL Parameter:** `accountID`: Account's ID (Example: `/accounts/delete/A12345`)
@@ -590,7 +629,10 @@ The project follows a modular structure:
 
 ### 1. Create Paper
 
-- **Endpoint:** `143.110.190.164:3002//admin/papers/create```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//admin/papers/create
+    ```
 - **Method:** `POST`
 - **Description:** Create a new paper.
 - **Request Format:** `application/json`
@@ -683,7 +725,10 @@ The project follows a modular structure:
     <hr>
 ### 2. View All Papers
 
-- **Endpoint:** `143.110.190.164:3002//admin/papers/find/all```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//admin/papers/find/all
+    ```
 - **Method:** `GET`
 - **Description:** View all papers' data.
 - **Response Format:** `application/json`
@@ -759,7 +804,10 @@ The project follows a modular structure:
     <hr>
 ### 3. View Paper by ID
 
-- **Endpoint:** `143.110.190.164:3002//admin/papers/find/:paperID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//admin/papers/find/:paperID
+    ```
 - **Method:** `GET`
 - **Description:** View paper data by paperID.
 - **URL Parameter:** `paperID`: Paper's ID (Example: `/admin/papers/find/PAP000001`)
@@ -844,7 +892,10 @@ The project follows a modular structure:
     <hr>
 ### 4. Update Paper by ID
 
-- **Endpoint:** `143.110.190.164:3002//admin/papers/update/:paperID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//admin/papers/update/:paperID
+    ```
 - **Method:** `PUT`
 - **Description:** Update paper data by paperID.
 - **URL Parameter:** `paperID`: Paper's ID (Example: `/admin/papers/update/PAP000001`)
@@ -889,7 +940,10 @@ The project follows a modular structure:
     <hr>
 ### 5. Delete Paper by ID
 
-- **Endpoint:** `143.110.190.164:3002//admin/papers/delete/:paperID```
+- **Endpoint:** 
+    ```json
+    143.110.190.164:3002//admin/papers/delete/:paperID
+    ```
 - **Method:** `DELETE`
 - **Description:** Delete paper data by paperID.
 - **URL Parameter:** `paperID`: Paper's ID (Example: `/admin/papers/delete/PAP000001`)
