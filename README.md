@@ -391,7 +391,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//accounts/create
+    143.110.190.164:3002/accounts/create
     ```
 - **Method:** `POST`
 - **Description:** Create a new account.
@@ -448,7 +448,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//accounts/find/all
+    143.110.190.164:3002/accounts/find/all
     ```
 - **Method:** `GET`
 - **Description:** View all accounts' data.
@@ -488,7 +488,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//accounts/find/:accountID
+    143.110.190.164:3002/accounts/find/:accountID
     ```
 - **Method:** `GET`
 - **Description:** View account data by accountID.
@@ -534,7 +534,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//accounts/update/:accountID
+    143.110.190.164:3002/accounts/update/:accountID
     ```
 - **Method:** `PUT`
 - **Description:** Update account data by accountID.
@@ -593,7 +593,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//accounts/delete/:accountID
+    143.110.190.164:3002/accounts/delete/:accountID
     ```
 - **Method:** `DELETE`
 - **Description:** Delete account data by accountID.
@@ -631,7 +631,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//admin/papers/create
+    143.110.190.164:3002/admin/papers/create
     ```
 - **Method:** `POST`
 - **Description:** Create a new paper.
@@ -727,7 +727,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//admin/papers/find/all
+    143.110.190.164:3002/admin/papers/find/all
     ```
 - **Method:** `GET`
 - **Description:** View all papers' data.
@@ -806,7 +806,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//admin/papers/find/:paperID
+    143.110.190.164:3002/admin/papers/find/:paperID
     ```
 - **Method:** `GET`
 - **Description:** View paper data by paperID.
@@ -894,7 +894,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//admin/papers/update/:paperID
+    143.110.190.164:3002/admin/papers/update/:paperID
     ```
 - **Method:** `PUT`
 - **Description:** Update paper data by paperID.
@@ -942,7 +942,7 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002//admin/papers/delete/:paperID
+    143.110.190.164:3002/admin/papers/delete/:paperID
     ```
 - **Method:** `DELETE`
 - **Description:** Delete paper data by paperID.
