@@ -1149,11 +1149,11 @@ The project follows a modular structure:
 ### 3. Get Khotiyan By ID
 - **Endpoint:** 
   ```md
-  143.110.190.164:3002/admin/khotiyan/find/:khotiyanID
+  143.110.190.164:3002/employee/khotiyan/find/:khotiyanID
   ```
 - **Method:** `GET`   
 - **Description:** `Get a knotiyan by its ID`
-- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/find/KHO000002`
+- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `employee/khotiyan/find/KHO000002`
 - **Response Format:** `application/json`
   - **Success Code:** `200`
     ```json
