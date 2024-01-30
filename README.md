@@ -38,12 +38,12 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [3. View Paper by ID](#3-view-paper-by-id)
     - [4. Update Paper by ID](#4-update-paper-by-id)
     - [5. Delete Paper by ID](#5-delete-paper-by-id)
-  - [Sale Section](#sale-section)
+  - [Sales](#sales)
     - [1. Create Sales](#1-create-sales)
     - [2. View All Sales](#2-view-all-sales)
-    - [3. View Sale by ID](#3-view-sale-by-id)
+    - [3. View Sales by ID](#3-view-sales-by-id)
     - [4. Update Sale by ID](#4-update-sale-by-id)
-    - [5. Delete Paper by ID](#5-delete-paper-by-id-1)
+    - [5. Delete Sale by ID](#5-delete-sale-by-id)
 - [Employee](#employee)
   - [Khotiyan](#khotiyan-1)
     - [1. Create Khotiyan](#1-create-khotiyan-1)
@@ -61,9 +61,10 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [1. Create Paper](#1-create-paper-1)
     - [2. View All Papers](#2-view-all-papers-1)
     - [3. View Paper by ID](#3-view-paper-by-id-1)
+  - [Sales](#sales-1)
     - [1. Create Sales](#1-create-sales-1)
     - [2. View All Sales](#2-view-all-sales-1)
-    - [3. View Sale by ID](#3-view-sale-by-id-1)
+    - [3. View Sales by ID](#3-view-sales-by-id-1)
 
 ## Features
 
@@ -182,24 +183,18 @@ The project follows a modular structure:
     ```
     <hr>
 ### 3. Get Khotiyan By ID
-- **Endpoint:** 
-  ```md
-  143.110.190.164:3002/admin/khotiyan/find/:khotiyanID
-  ```
+- **Endpoint:** `143.110.190.164:3002/admin/khotiyan/get/:khotiyanID`
 - **Method:** `GET`   
 - **Description:** `Get a knotiyan by its ID`
-- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/find/KHO000002`
+- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/get/KHO000002`
 - **Response Format:** `application/json`
   - **Success Code:** `200`
     ```json
     {
         "success": "Data retrieved successfully.",
-        "data":{
-            "_id": "65b6490e9920687bfa815bb0",
-            "khotiyanID": "KHO000004",
-            "name": "John Doe",
-            "address": "123 Main Street, Cityville",
-            "mobile_number": "555-1234",
+        "data": {
+            "_id": "65b616992727a5d87840bc3b",
+            "khotiyanID": "KHO000002",
             "__v": 0
         }
     }
@@ -497,10 +492,11 @@ The project follows a modular structure:
     ```
 - **Method:** `POST`
 - **Description:** Create a new account.
-- **Request Format:** `multipart/form-data`
+- **Request Format:** `application/json`
 
   ~~~json
   {
+    "accountID": "A12345",
     "date": "2024-01-20",
     "project_name": "Sample Project",
     "khotiyan_name": "Khotiyan ABC",
@@ -776,7 +772,7 @@ The project follows a modular structure:
                 "_id": "65acfc09360a2ed76aa9ea8f"
             }
         ],
-        "dolil": [
+        "papers": [
             {
                 "name": "Paper1",
                 "type": "Type1",
@@ -879,7 +875,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "dolil": [
+                "papers": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -959,7 +955,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "dolil": [
+                "papers": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -1074,45 +1070,47 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
-## Sale Section
+
+## Sales
+
 
 ### 1. Create Sales
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/create
+    143.110.190.164:3002/employee/sales/create
     ```
 - **Method:** `POST`
-- **Description:** Create a new sale.
+- **Description:** Create a new Sale.
 - **Request Format:** `application/json`
+
   ~~~json
   {
-    "mouja_name": "aa",
-        "project_name": "aa",
-        "mot_jomir_poriman": 15,
-        "date": "2024-01-28T00:00:00.000Z",
-        "price": 150000,
-        "plot_number": "Plot-001",
-        "grohitas": [
-            {
-                "name": "Grohita1",
-                "_id": "65b641ac0bde095806b8d757"
-            },
-            {
-                "name": "Grohita2",
-                "_id": "65b641ac0bde095806b8d758"
-            }
-        ],
-        "datas": [
-            {
-                "name": "aa",
-                "_id": "65b641ac0bde095806b8d759"
-            },
-            {
-                "name": "bb",
-                "_id": "65b641ac0bde095806b8d75a"
-            }
-        ]
+      "rs_dag": "a123",
+      "paperID": "PAP000012",
+      "brotoman_kharij_khotiyan": "aa",
+      "datas": [
+          {
+              "name": "aa",
+              "sale_ongsho": 10
+          },
+          {
+              "name": "bb",
+              "sale_ongsho": 10
+          }
+      ],
+      "mot_jomir_poriman": 20,
+      "date": current-date,
+      "price": 123,
+      "plot_number": "A123",
+      "grohitas": [
+          {
+              "name": "new aa"
+          },
+          {
+              "name": "new bb"
+          }
+      ]
   }
   ~~~
 
@@ -1130,7 +1128,7 @@ The project follows a modular structure:
 
     ~~~json
     {
-      "error": "Input errors: 'field-name' - required"
+      "error": "Input errors: "
     }
     ~~~
 
@@ -1138,7 +1136,7 @@ The project follows a modular structure:
 
     ~~~json
     {
-      "error": "Duplicate error: paperID: SAL000001"
+      "error": "Duplicate error: saleID: SAL000003"
     }
     ~~~
 
@@ -1154,82 +1152,55 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/find/all
+    143.110.190.164:3002/employee/sales/find/all
     ```
 - **Method:** `GET`
-- **Description:** View all sales' data.
+- **Description:** View all Sale's data.
 - **Response Format:** `application/json`
 
   - **Success Code:** `200`
-
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": [
+      "success": "Data retrieved successfully.",
+      "data": [
           {
-            "_id": "65b641ac0bde095806b8d756",
-            "saleID": "SAL000001",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b641ac0bde095806b8d757"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b641ac0bde095806b8d758"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b641ac0bde095806b8d759"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b641ac0bde095806b8d75a"
-                }
-            ],
-            "__v": 0
-        },
-        {
-            "_id": "65b6422f0bde095806b8d77a",
-            "saleID": "SAL000002",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b6422f0bde095806b8d77b"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b6422f0bde095806b8d77c"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b6422f0bde095806b8d77d"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b6422f0bde095806b8d77e"
-                }
-            ],
-            "__v": 0
-        },...
-      ]  
-    }
+              "_id": "65b8a3c84619bbd6ee016581",
+              "saleID": "SAL000001",
+              "paperID": "PAP000012",
+              "mouja_name": "aa",
+              "project_name": "aa",
+              "rs_dag": "a123",
+              "bortoman_kharij_khotiyan": "aa",
+              "mot_jomir_poriman": 20,
+              "price": 123,
+              "plot_number": "A123",
+              "grohitas": [
+                  {
+                      "name": "new aa",
+                      "_id": "65b8ac308bf085011ca5236d"
+                  },
+                  {
+                      "name": "new bb",
+                      "_id": "65b8ac308bf085011ca5236e"
+                  }
+              ],
+              "datas": [
+                  {
+                      "name": "aa",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca5236f"
+                  },
+                  {
+                      "name": "bb",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca52370"
+                  }
+              ],
+              "__v": 0
+          },
+          ...
+      ]
+  }
     ~~~
 
   - **Error Code:** `500`
@@ -1240,52 +1211,57 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
-### 3. View Sale by ID
+### 3. View Sales by ID
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/find/:saleID
+    143.110.190.164:3002/employee/sales/find/:saleID
     ```
 - **Method:** `GET`
-- **Description:** View sales data by saleID.
-- **URL Parameter:** `saleID`: Sale's ID (Example: `/admin/sales/find/SAL000001`)
+- **Description:** View account data by saleID.
+- **URL Parameter:** `saleID`: Sale's ID (Example: `/sales/find/SAL000003`)
 - **Response Format:** `application/json`
+
   - **Success Code:** `200`
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": {
-            "_id": "65b641ac0bde095806b8d756",
-            "saleID": "SAL000001",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b641ac0bde095806b8d757"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b641ac0bde095806b8d758"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b641ac0bde095806b8d759"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b641ac0bde095806b8d75a"
-                }
-            ],
-            "__v": 0
-        }
+      "success": "Data retrieved successfully.",
+      "data":{
+              "_id": "65b8a3c84619bbd6ee016581",
+              "saleID": "SAL000001",
+              "paperID": "PAP000012",
+              "mouja_name": "aa",
+              "project_name": "aa",
+              "rs_dag": "a123",
+              "bortoman_kharij_khotiyan": "aa",
+              "mot_jomir_poriman": 20,
+              "price": 123,
+              "plot_number": "A123",
+              "grohitas": [
+                  {
+                      "name": "new aa",
+                      "_id": "65b8ac308bf085011ca5236d"
+                  },
+                  {
+                      "name": "new bb",
+                      "_id": "65b8ac308bf085011ca5236e"
+                  }
+              ],
+              "datas": [
+                  {
+                      "name": "aa",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca5236f"
+                  },
+                  {
+                      "name": "bb",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca52370"
+                  }
+              ],
+              "__v": 0
     }
+  }
     ~~~
 
   - **Error Code:** `404`
@@ -1304,6 +1280,7 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
+
 ### 4. Update Sale by ID
 
 - **Endpoint:** 
@@ -1311,39 +1288,13 @@ The project follows a modular structure:
     143.110.190.164:3002/admin/sales/update/:saleID
     ```
 - **Method:** `PUT`
-- **Description:** Update paper data by saleID.
-- **URL Parameter:** `saleID`: Paper's ID (Example: `/admin/sale/update/SAL000001`)
+- **Description:** Update sale data by saleID.
+- **URL Parameter:** `saleID`: Sale's ID (Example: `/sales/update/SAL000004`)
 - **Request Format:** `application/json`
 
   ~~~json
-  {
-    "mouja_name": "aa",
-    "project_name": "aa",
-    "mot_jomir_poriman": 5,
-    "date": "2024-01-29T00:00:00.000Z",
-    "price": 75000,
-    "plot_number": "Plot-002",
-    "grohitas": [
-        {
-            "name": "Grohita3",
-            "_id": "65b6654eb1f88d80ef5cd58f"
-        },
-        {
-            "name": "Grohita4",
-            "_id": "65b6654eb1f88d80ef5cd590"
-        }
-    ],
-    "datas": [
-        {
-            "name": "aa",
-            "_id": "65b6654eb1f88d80ef5cd591"
-        },
-        {
-            "name": "bb",
-            "_id": "65b6654eb1f88d80ef5cd592"
-        }
-    ]
-  }
+
+
   ~~~
 
 - **Response Format:** `application/json`
@@ -1351,9 +1302,8 @@ The project follows a modular structure:
   - **Success Code:** `200`
 
     ~~~json
-    {
-      "success": "Update successful."
-    }
+
+
     ~~~
 
   - **Error Code:** `404`
@@ -1372,15 +1322,15 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
-### 5. Delete Paper by ID
+### 5. Delete Sale by ID
 
 - **Endpoint:** 
     ```md
     143.110.190.164:3002/admin/sales/delete/:saleID
     ```
 - **Method:** `DELETE`
-- **Description:** Delete paper data by saleID.
-- **URL Parameter:** `saleID`: Paper's ID (Example: `/admin/sale/delete/SAL000001`)
+- **Description:** Delete sale data by saleID.
+- **URL Parameter:** `saleID`: Sales's ID (Example: `/sales/delete/SAL000005`)
 - **Response Format:** `application/json`
 
   - **Success Code:** `200`
@@ -1489,24 +1439,18 @@ The project follows a modular structure:
     <hr>
 
 ### 3. Get Khotiyan By ID
-- **Endpoint:** 
-  ```md
-  143.110.190.164:3002/employee/khotiyan/find/:khotiyanID
-  ```
+- **Endpoint:** `143.110.190.164:3002/employee/khotiyan/get/:khotiyanID`
 - **Method:** `GET`   
 - **Description:** `Get a knotiyan by its ID`
-- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `employee/khotiyan/find/KHO000002`
+- **URL Parameter:** `khotiyanID`: Khotiyan's ID (Example: `admin/khotiyan/get/KHO000002`
 - **Response Format:** `application/json`
   - **Success Code:** `200`
     ```json
     {
         "success": "Data retrieved successfully.",
-        "data":{
-            "_id": "65b6490e9920687bfa815bb0",
-            "khotiyanID": "KHO000004",
-            "name": "John Doe",
-            "address": "123 Main Street, Cityville",
-            "mobile_number": "555-1234",
+        "data": {
+            "_id": "65b616992727a5d87840bc3b",
+            "khotiyanID": "KHO000002",
             "__v": 0
         }
     }
@@ -1648,6 +1592,7 @@ The project follows a modular structure:
 
   ~~~json
   {
+    "accountID": "A12345",
     "date": "2024-01-20",
     "project_name": "Sample Project",
     "khotiyan_name": "Khotiyan ABC",
@@ -1787,7 +1732,8 @@ The project follows a modular structure:
     ```
 - **Method:** `POST`
 - **Description:** Create a new paper.
-- **Request Format:** `multipart/form-data`
+- **Request Format:** `application/json`
+
   ~~~json
     {
         "khotiyans": [
@@ -1826,7 +1772,7 @@ The project follows a modular structure:
                 "_id": "65acfc09360a2ed76aa9ea8f"
             }
         ],
-        "dolil": [
+        "papers": [
             {
                 "name": "Paper1",
                 "type": "Type1",
@@ -1929,7 +1875,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "dolil": [
+                "papers": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -2007,7 +1953,7 @@ The project follows a modular structure:
                         "_id": "65acfc09360a2ed76aa9ea8f"
                     }
                 ],
-                "dolil": [
+                "papers": [
                     {
                         "name": "Paper1",
                         "type": "Type1",
@@ -2038,45 +1984,45 @@ The project follows a modular structure:
     ~~~
     <hr>
 
-    ## Sale Section
+## Sales
 
 ### 1. Create Sales
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/create
+    143.110.190.164:3002/employee/sales/create
     ```
 - **Method:** `POST`
-- **Description:** Create a new sale.
+- **Description:** Create a new Sale.
 - **Request Format:** `application/json`
+
   ~~~json
   {
-    "mouja_name": "aa",
-        "project_name": "aa",
-        "mot_jomir_poriman": 15,
-        "date": "2024-01-28T00:00:00.000Z",
-        "price": 150000,
-        "plot_number": "Plot-001",
-        "grohitas": [
-            {
-                "name": "Grohita1",
-                "_id": "65b641ac0bde095806b8d757"
-            },
-            {
-                "name": "Grohita2",
-                "_id": "65b641ac0bde095806b8d758"
-            }
-        ],
-        "datas": [
-            {
-                "name": "aa",
-                "_id": "65b641ac0bde095806b8d759"
-            },
-            {
-                "name": "bb",
-                "_id": "65b641ac0bde095806b8d75a"
-            }
-        ]
+      "rs_dag": "a123",
+      "paperID": "PAP000012",
+      "brotoman_kharij_khotiyan": "aa",
+      "datas": [
+          {
+              "name": "aa",
+              "sale_ongsho": 10
+          },
+          {
+              "name": "bb",
+              "sale_ongsho": 10
+          }
+      ],
+      "mot_jomir_poriman": 20,
+      "date": current-date,
+      "price": 123,
+      "plot_number": "A123",
+      "grohitas": [
+          {
+              "name": "new aa"
+          },
+          {
+              "name": "new bb"
+          }
+      ]
   }
   ~~~
 
@@ -2094,7 +2040,7 @@ The project follows a modular structure:
 
     ~~~json
     {
-      "error": "Input errors: 'field-name' - required"
+      "error": "Input errors: "
     }
     ~~~
 
@@ -2102,7 +2048,7 @@ The project follows a modular structure:
 
     ~~~json
     {
-      "error": "Duplicate error: paperID: SAL000001"
+      "error": "Duplicate error: saleID: SAL000003"
     }
     ~~~
 
@@ -2118,82 +2064,55 @@ The project follows a modular structure:
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/find/all
+    143.110.190.164:3002/employee/sales/find/all
     ```
 - **Method:** `GET`
-- **Description:** View all sales' data.
+- **Description:** View all Sale's data.
 - **Response Format:** `application/json`
 
   - **Success Code:** `200`
-
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": [
+      "success": "Data retrieved successfully.",
+      "data": [
           {
-            "_id": "65b641ac0bde095806b8d756",
-            "saleID": "SAL000001",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b641ac0bde095806b8d757"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b641ac0bde095806b8d758"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b641ac0bde095806b8d759"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b641ac0bde095806b8d75a"
-                }
-            ],
-            "__v": 0
-        },
-        {
-            "_id": "65b6422f0bde095806b8d77a",
-            "saleID": "SAL000002",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b6422f0bde095806b8d77b"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b6422f0bde095806b8d77c"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b6422f0bde095806b8d77d"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b6422f0bde095806b8d77e"
-                }
-            ],
-            "__v": 0
-        },...
-      ]  
-    }
+              "_id": "65b8a3c84619bbd6ee016581",
+              "saleID": "SAL000001",
+              "paperID": "PAP000012",
+              "mouja_name": "aa",
+              "project_name": "aa",
+              "rs_dag": "a123",
+              "bortoman_kharij_khotiyan": "aa",
+              "mot_jomir_poriman": 20,
+              "price": 123,
+              "plot_number": "A123",
+              "grohitas": [
+                  {
+                      "name": "new aa",
+                      "_id": "65b8ac308bf085011ca5236d"
+                  },
+                  {
+                      "name": "new bb",
+                      "_id": "65b8ac308bf085011ca5236e"
+                  }
+              ],
+              "datas": [
+                  {
+                      "name": "aa",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca5236f"
+                  },
+                  {
+                      "name": "bb",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca52370"
+                  }
+              ],
+              "__v": 0
+          },
+          ...
+      ]
+  }
     ~~~
 
   - **Error Code:** `500`
@@ -2204,52 +2123,57 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
-### 3. View Sale by ID
+### 3. View Sales by ID
 
 - **Endpoint:** 
     ```md
-    143.110.190.164:3002/admin/sales/find/:saleID
+    143.110.190.164:3002/employee/sales/find/:saleID
     ```
 - **Method:** `GET`
-- **Description:** View sales data by saleID.
-- **URL Parameter:** `saleID`: Sale's ID (Example: `/admin/sales/find/SAL000001`)
+- **Description:** View account data by saleID.
+- **URL Parameter:** `saleID`: Sale's ID (Example: `/sales/find/SAL000003`)
 - **Response Format:** `application/json`
+
   - **Success Code:** `200`
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": {
-            "_id": "65b641ac0bde095806b8d756",
-            "saleID": "SAL000001",
-            "mouja_name": "aa",
-            "project_name": "aa",
-            "mot_jomir_poriman": 15,
-            "date": "2024-01-28T00:00:00.000Z",
-            "price": 150000,
-            "plot_number": "Plot-001",
-            "grohitas": [
-                {
-                    "name": "Grohita1",
-                    "_id": "65b641ac0bde095806b8d757"
-                },
-                {
-                    "name": "Grohita2",
-                    "_id": "65b641ac0bde095806b8d758"
-                }
-            ],
-            "datas": [
-                {
-                    "name": "aa",
-                    "_id": "65b641ac0bde095806b8d759"
-                },
-                {
-                    "name": "bb",
-                    "_id": "65b641ac0bde095806b8d75a"
-                }
-            ],
-            "__v": 0
-        }
+      "success": "Data retrieved successfully.",
+      "data":{
+              "_id": "65b8a3c84619bbd6ee016581",
+              "saleID": "SAL000001",
+              "paperID": "PAP000012",
+              "mouja_name": "aa",
+              "project_name": "aa",
+              "rs_dag": "a123",
+              "bortoman_kharij_khotiyan": "aa",
+              "mot_jomir_poriman": 20,
+              "price": 123,
+              "plot_number": "A123",
+              "grohitas": [
+                  {
+                      "name": "new aa",
+                      "_id": "65b8ac308bf085011ca5236d"
+                  },
+                  {
+                      "name": "new bb",
+                      "_id": "65b8ac308bf085011ca5236e"
+                  }
+              ],
+              "datas": [
+                  {
+                      "name": "aa",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca5236f"
+                  },
+                  {
+                      "name": "bb",
+                      "sale_ongsho": 10,
+                      "_id": "65b8ac308bf085011ca52370"
+                  }
+              ],
+              "__v": 0
     }
+  }
     ~~~
 
   - **Error Code:** `404`
