@@ -754,7 +754,7 @@ The project follows a modular structure:
                 ],
                 "sa_khotiyan": "SA123",
                 "rs_khotiyan": "RS456",
-                "brotoman_kharij_khotiyan": "BKT789",
+                "bortoman_kharij_khotiyan": "BKT789",
                 "mouja_name": "Mouja1",
                 "project_name": "Project1",
                 "shompottir_biboron": "Biboron1",
@@ -857,7 +857,7 @@ The project follows a modular structure:
                         ],
                         "sa_khotiyan": "SA123",
                         "rs_khotiyan": "RS456",
-                        "brotoman_kharij_khotiyan": "BKT789",
+                        "bortoman_kharij_khotiyan": "BKT789",
                         "mouja_name": "Mouja1",
                         "project_name": "Project1",
                         "shompottir_biboron": "Biboron1",
@@ -937,7 +937,7 @@ The project follows a modular structure:
                         ],
                         "sa_khotiyan": "SA123",
                         "rs_khotiyan": "RS456",
-                        "brotoman_kharij_khotiyan": "BKT789",
+                        "bortoman_kharij_khotiyan": "BKT789",
                         "mouja_name": "Mouja1",
                         "project_name": "Project1",
                         "shompottir_biboron": "Biboron1",
@@ -1088,7 +1088,7 @@ The project follows a modular structure:
   {
       "rs_dag": "a123",
       "paperID": "PAP000012",
-      "brotoman_kharij_khotiyan": "aa",
+      "bortoman_kharij_khotiyan": "aa",
       "datas": [
           {
               "name": "aa",
@@ -1754,7 +1754,7 @@ The project follows a modular structure:
                 ],
                 "sa_khotiyan": "SA123",
                 "rs_khotiyan": "RS456",
-                "brotoman_kharij_khotiyan": "BKT789",
+                "bortoman_kharij_khotiyan": "BKT789",
                 "mouja_name": "Mouja1",
                 "project_name": "Project1",
                 "shompottir_biboron": "Biboron1",
@@ -1857,7 +1857,7 @@ The project follows a modular structure:
                         ],
                         "sa_khotiyan": "SA123",
                         "rs_khotiyan": "RS456",
-                        "brotoman_kharij_khotiyan": "BKT789",
+                        "bortoman_kharij_khotiyan": "BKT789",
                         "mouja_name": "Mouja1",
                         "project_name": "Project1",
                         "shompottir_biboron": "Biboron1",
@@ -1935,7 +1935,7 @@ The project follows a modular structure:
                         ],
                         "sa_khotiyan": "SA123",
                         "rs_khotiyan": "RS456",
-                        "brotoman_kharij_khotiyan": "BKT789",
+                        "bortoman_kharij_khotiyan": "BKT789",
                         "mouja_name": "Mouja1",
                         "project_name": "Project1",
                         "shompottir_biboron": "Biboron1",
@@ -2000,7 +2000,7 @@ The project follows a modular structure:
   {
       "rs_dag": "a123",
       "paperID": "PAP000012",
-      "brotoman_kharij_khotiyan": "aa",
+      "bortoman_kharij_khotiyan": "aa",
       "datas": [
           {
               "name": "aa",
