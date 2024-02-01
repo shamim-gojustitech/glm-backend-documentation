@@ -732,58 +732,61 @@ The project follows a modular structure:
     ```
 - **Method:** `POST`
 - **Description:** Create a new paper.
-- **Request Format:** `application/json`
+- **Request Format:** `multipart form-data`
 
   ~~~json
-    {
-        "khotiyans": [
-            {
-                "dags": [
-                    {
-                        "sa_dag": "ABC",
-                        "rs_dag": "XYZ",
-                        "jomir_poriman": 15,
-                        "_id": "65acfc09360a2ed76aa9ea8d"
-                    },
-                    {
-                        "sa_dag": "ABC",
-                        "rs_dag": "XYZ",
-                        "jomir_poriman": 5,
-                        "_id": "65acfc09360a2ed76aa9ea8e"
-                    }
-                ],
-                "sa_khotiyan": "SA123",
-                "rs_khotiyan": "RS456",
-                "bortoman_kharij_khotiyan": "BKT789",
-                "mouja_name": "Mouja1",
-                "project_name": "Project1",
-                "shompottir_biboron": "Biboron1",
-                "_id": "65acfc09360a2ed76aa9ea8c"
-            }
-        ],
-        "maliks": [
-            {
-                "name": "Malik1",
-                "nid": "NID123",
-                "mobile_number": "1234567890",
-                "father_name": "Father1",
-                "address": "Address1",
-                "jomir_poriman": 15,
-                "_id": "65acfc09360a2ed76aa9ea8f"
-            }
-        ],
-        "papers": [
-            {
-                "name": "Paper1",
-                "type": "Type1",
-                "file": "file1.pdf",
-                "_id": "65acfc09360a2ed76aa9ea90"
-            }
-        ],
-        "potinidhi": "Poti1",
-        "mot_kroymullo": "Kroymullo1",
-        "__v": 0
-    }
+  khotiyans[0][dags][0][sa_dag]:a123
+  khotiyans[0][dags][0][rs_dag]:a123
+  khotiyans[0][dags][0][jomir_poriman]:70
+  khotiyans[0][dags][1][sa_dag]:b123
+  khotiyans[0][dags][1][rs_dag]:b123
+  khotiyans[0][dags][1][jomir_poriman]:90
+  khotiyans[0][sa_khotiyan]:aa
+  khotiyans[0][rs_khotiyan]:aa
+  khotiyans[0][brotoman_kharij_khotiyan]:aa
+  khotiyans[0][mouja_name]:aa
+  khotiyans[0][project_name]:aa
+  khotiyans[0][shompottir_biboron]:aa
+  khotiyans[1][dags][0][sa_dag]:bb
+  khotiyans[1][dags][0][rs_dag]:bb
+  khotiyans[1][dags][0][jomir_poriman]:80
+  khotiyans[1][dags][1][sa_dag]:dd
+  khotiyans[1][dags][1][rs_dag]:dd
+  khotiyans[1][dags][1][jomir_poriman]:50
+  khotiyans[1][sa_khotiyan]:bb
+  khotiyans[1][rs_khotiyan]:bb
+  khotiyans[1][brotoman_kharij_khotiyan]:bb
+  khotiyans[1][mouja_name]:bb
+  khotiyans[1][project_name]:bb
+  khotiyans[1][shompottir_biboron]:bb
+  maliks[0][name]:aa
+  maliks[0][nid]:aa
+  maliks[0][mobile_number]:aa
+  maliks[0][father_name]:aa
+  maliks[0][address]:aa
+  maliks[0][jomi][0][rs_dag]:a123
+  maliks[0][jomi][0][poriman]:40
+  maliks[0][jomi][1][rs_dag]:b123
+  maliks[0][jomi][1][poriman]:60
+  maliks[0][maliker_jomir_poriman]:100
+  maliks[1][name]:bb
+  maliks[1][nid]:bb
+  maliks[1][mobile_number]:bb
+  maliks[1][father_name]:bb
+  maliks[1][address]:bb
+  maliks[1][jomi][0][rs_dag]:a123
+  maliks[1][jomi][0][poriman]:30
+  maliks[1][jomi][1][rs_dag]:b123
+  maliks[1][jomi][1][poriman]:30
+  maliks[1][maliker_jomir_poriman]:150
+  dolil[0][name]:pp
+  dolil[0][type]:pp
+  dolil[1][name]:qq
+  dolil[1][type]:qq
+  potinidhi:nn
+  mot_kroymullo:90
+  dolil[0][file]:
+  dolil[1][file]:
   ~~~
 
 - **Response Format:** `application/json`
@@ -834,61 +837,122 @@ The project follows a modular structure:
 
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": [
-            {
-                "_id": "65acfc09360a2ed76aa9ea8b",
-                "paperID": "PAP000001",
-                "khotiyans": [
-                    {
-                        "dags": [
-                            {
-                                "sa_dag": "ABC",
-                                "rs_dag": "XYZ",
-                                "jomir_poriman": 15,
-                                "_id": "65acfc09360a2ed76aa9ea8d"
-                            },
-                            {
-                                "sa_dag": "ABC",
-                                "rs_dag": "XYZ",
-                                "jomir_poriman": 5,
-                                "_id": "65acfc09360a2ed76aa9ea8e"
-                            }
-                        ],
-                        "sa_khotiyan": "SA123",
-                        "rs_khotiyan": "RS456",
-                        "bortoman_kharij_khotiyan": "BKT789",
-                        "mouja_name": "Mouja1",
-                        "project_name": "Project1",
-                        "shompottir_biboron": "Biboron1",
-                        "_id": "65acfc09360a2ed76aa9ea8c"
-                    }
-                ],
-                "maliks": [
-                    {
-                        "name": "Malik1",
-                        "nid": "NID123",
-                        "mobile_number": "1234567890",
-                        "father_name": "Father1",
-                        "address": "Address1",
-                        "jomir_poriman": 15,
-                        "_id": "65acfc09360a2ed76aa9ea8f"
-                    }
-                ],
-                "papers": [
-                    {
-                        "name": "Paper1",
-                        "type": "Type1",
-                        "file": "file1.pdf",
-                        "_id": "65acfc09360a2ed76aa9ea90"
-                    }
-                ],
-                "potinidhi": "Poti1",
-                "mot_kroymullo": "Kroymullo1",
-                "__v": 0
-            },
-            ...
-    }
+          "success": "Operation successful.",
+          "data": {
+              "paperID": "PAP000025",
+              "khotiyans": [
+                  {
+                      "dags": [
+                          {
+                              "sa_dag": "a123",
+                              "rs_dag": "a123",
+                              "jomir_poriman": 70,
+                              "_id": "65ba243e035fdc4d506cd1c5"
+                          },
+                          {
+                              "sa_dag": "b123",
+                              "rs_dag": "b123",
+                              "jomir_poriman": 90,
+                              "_id": "65ba243e035fdc4d506cd1c6"
+                          }
+                      ],
+                      "sa_khotiyan": "aa",
+                      "rs_khotiyan": "aa",
+                      "mouja_name": "aa",
+                      "project_name": "aa",
+                      "shompottir_biboron": "aa",
+                      "khotiyan_jomir_poriman": 160,
+                      "_id": "65ba243e035fdc4d506cd1c4"
+                  },
+                  {
+                      "dags": [
+                          {
+                              "sa_dag": "bb",
+                              "rs_dag": "bb",
+                              "jomir_poriman": 80,
+                              "_id": "65ba243e035fdc4d506cd1c8"
+                          },
+                          {
+                              "sa_dag": "dd",
+                              "rs_dag": "dd",
+                              "jomir_poriman": 50,
+                              "_id": "65ba243e035fdc4d506cd1c9"
+                          }
+                      ],
+                      "sa_khotiyan": "bb",
+                      "rs_khotiyan": "bb",
+                      "mouja_name": "bb",
+                      "project_name": "bb",
+                      "shompottir_biboron": "bb",
+                      "khotiyan_jomir_poriman": 130,
+                      "_id": "65ba243e035fdc4d506cd1c7"
+                  }
+              ],
+              "maliks": [
+                  {
+                      "name": "aa",
+                      "nid": "aa",
+                      "mobile_number": "aa",
+                      "father_name": "aa",
+                      "address": "aa",
+                      "jomi": [
+                          {
+                              "rs_dag": "a123",
+                              "poriman": 40,
+                              "_id": "65ba243e035fdc4d506cd1cb"
+                          },
+                          {
+                              "rs_dag": "b123",
+                              "poriman": 60,
+                              "_id": "65ba243e035fdc4d506cd1cc"
+                          }
+                      ],
+                      "maliker_jomir_poriman": 100,
+                      "_id": "65ba243e035fdc4d506cd1ca"
+                  },
+                  {
+                      "name": "bb",
+                      "nid": "bb",
+                      "mobile_number": "bb",
+                      "father_name": "bb",
+                      "address": "bb",
+                      "jomi": [
+                          {
+                              "rs_dag": "a123",
+                              "poriman": 30,
+                              "_id": "65ba243e035fdc4d506cd1ce"
+                          },
+                          {
+                              "rs_dag": "b123",
+                              "poriman": 30,
+                              "_id": "65ba243e035fdc4d506cd1cf"
+                          }
+                      ],
+                      "maliker_jomir_poriman": 150,
+                      "_id": "65ba243e035fdc4d506cd1cd"
+                  }
+              ],
+              "dolil": [
+                  {
+                      "name": "pp",
+                      "type": "pp",
+                      "_id": "65ba243e035fdc4d506cd1d0",
+                      "file": "https://gojustitech-spaces-test-0.blr1.digitaloceanspaces.com/1706697789911-985649070.png"
+                  },
+                  {
+                      "name": "qq",
+                      "type": "qq",
+                      "_id": "65ba243e035fdc4d506cd1d1",
+                      "file": "https://gojustitech-spaces-test-0.blr1.digitaloceanspaces.com/1706697789913-739689163.png"
+                  }
+              ],
+              "mot_jomir_poriman": 290,
+              "potinidhi": "nn",
+              "mot_kroymullo": "90",
+              "_id": "65ba243e035fdc4d506cd1c3",
+              "__v": 0
+          }
+      }
     ~~~
 
   - **Error Code:** `500`
@@ -914,61 +978,125 @@ The project follows a modular structure:
 
     ~~~json
     {
-        "success": "Data retrieved successfully.",
-        "data": [
-            {
-                "_id": "65acfc09360a2ed76aa9ea8b",
-                "paperID": "PAP000001",
-                "khotiyans": [
-                    {
-                        "dags": [
-                            {
-                                "sa_dag": "ABC",
-                                "rs_dag": "XYZ",
-                                "jomir_poriman": 15,
-                                "_id": "65acfc09360a2ed76aa9ea8d"
-                            },
-                            {
-                                "sa_dag": "ABC",
-                                "rs_dag": "XYZ",
-                                "jomir_poriman": 5,
-                                "_id": "65acfc09360a2ed76aa9ea8e"
-                            }
-                        ],
-                        "sa_khotiyan": "SA123",
-                        "rs_khotiyan": "RS456",
-                        "bortoman_kharij_khotiyan": "BKT789",
-                        "mouja_name": "Mouja1",
-                        "project_name": "Project1",
-                        "shompottir_biboron": "Biboron1",
-                        "_id": "65acfc09360a2ed76aa9ea8c"
-                    }
-                ],
-                "maliks": [
-                    {
-                        "name": "Malik1",
-                        "nid": "NID123",
-                        "mobile_number": "1234567890",
-                        "father_name": "Father1",
-                        "address": "Address1",
-                        "jomir_poriman": 15,
-                        "_id": "65acfc09360a2ed76aa9ea8f"
-                    }
-                ],
-                "papers": [
-                    {
-                        "name": "Paper1",
-                        "type": "Type1",
-                        "file": "file1.pdf",
-                        "_id": "65acfc09360a2ed76aa9ea90"
-                    }
-                ],
-                "potinidhi": "Poti1",
-                "mot_kroymullo": "Kroymullo1",
-                "__v": 0
-            },
+          "success": "Operation successful.",
+          "data": {
+              "paperID": "PAP000025",
+              "khotiyans": [
+                  {
+                      "dags": [
+                          {
+                              "sa_dag": "a123",
+                              "rs_dag": "a123",
+                              "jomir_poriman": 70,
+                              "_id": "65ba243e035fdc4d506cd1c5"
+                          },
+                          {
+                              "sa_dag": "b123",
+                              "rs_dag": "b123",
+                              "jomir_poriman": 90,
+                              "_id": "65ba243e035fdc4d506cd1c6"
+                          }
+                      ],
+                      "sa_khotiyan": "aa",
+                      "rs_khotiyan": "aa",
+                      "mouja_name": "aa",
+                      "project_name": "aa",
+                      "shompottir_biboron": "aa",
+                      "khotiyan_jomir_poriman": 160,
+                      "_id": "65ba243e035fdc4d506cd1c4"
+                  },
+                  {
+                      "dags": [
+                          {
+                              "sa_dag": "bb",
+                              "rs_dag": "bb",
+                              "jomir_poriman": 80,
+                              "_id": "65ba243e035fdc4d506cd1c8"
+                          },
+                          {
+                              "sa_dag": "dd",
+                              "rs_dag": "dd",
+                              "jomir_poriman": 50,
+                              "_id": "65ba243e035fdc4d506cd1c9"
+                          }
+                      ],
+                      "sa_khotiyan": "bb",
+                      "rs_khotiyan": "bb",
+                      "mouja_name": "bb",
+                      "project_name": "bb",
+                      "shompottir_biboron": "bb",
+                      "khotiyan_jomir_poriman": 130,
+                      "_id": "65ba243e035fdc4d506cd1c7"
+                  }
+              ],
+              "maliks": [
+                  {
+                      "name": "aa",
+                      "nid": "aa",
+                      "mobile_number": "aa",
+                      "father_name": "aa",
+                      "address": "aa",
+                      "jomi": [
+                          {
+                              "rs_dag": "a123",
+                              "poriman": 40,
+                              "_id": "65ba243e035fdc4d506cd1cb"
+                          },
+                          {
+                              "rs_dag": "b123",
+                              "poriman": 60,
+                              "_id": "65ba243e035fdc4d506cd1cc"
+                          }
+                      ],
+                      "maliker_jomir_poriman": 100,
+                      "_id": "65ba243e035fdc4d506cd1ca"
+                  },
+                  {
+                      "name": "bb",
+                      "nid": "bb",
+                      "mobile_number": "bb",
+                      "father_name": "bb",
+                      "address": "bb",
+                      "jomi": [
+                          {
+                              "rs_dag": "a123",
+                              "poriman": 30,
+                              "_id": "65ba243e035fdc4d506cd1ce"
+                          },
+                          {
+                              "rs_dag": "b123",
+                              "poriman": 30,
+                              "_id": "65ba243e035fdc4d506cd1cf"
+                          }
+                      ],
+                      "maliker_jomir_poriman": 150,
+                      "_id": "65ba243e035fdc4d506cd1cd"
+                  }
+              ],
+              "dolil": [
+                  {
+                      "name": "pp",
+                      "type": "pp",
+                      "_id": "65ba243e035fdc4d506cd1d0",
+                      "file": "https://gojustitech-spaces-test-0.blr1.digitaloceanspaces.com/1706697789911-985649070.png"
+                  },
+                  {
+                      "name": "qq",
+                      "type": "qq",
+                      "_id": "65ba243e035fdc4d506cd1d1",
+                      "file": "https://gojustitech-spaces-test-0.blr1.digitaloceanspaces.com/1706697789913-739689163.png"
+                  }
+              ],
+              "mot_jomir_poriman": 290,
+              "potinidhi": "nn",
+              "mot_kroymullo": "90",
+              "_id": "65ba243e035fdc4d506cd1c3",
+              "__v": 0
+          }
+        }
             ...
-    }
+     },
+    ...
     ~~~
 
   - **Error Code:** `404`
@@ -1293,8 +1421,22 @@ The project follows a modular structure:
 - **Request Format:** `application/json`
 
   ~~~json
-
-
+  {
+    "rs_dag": "a123",
+    "paperID": "PAP000012",
+    "bortoman_kharij_khotiyan": "aa",
+    "datas": [
+        {
+            "name": "aa",
+            "sale_ongsho": 5
+        },
+        {
+            "name": "bb",
+            "sale_ongsho": 15
+        }
+    ],
+    "mot_jomir_poriman": 20
+  }
   ~~~
 
 - **Response Format:** `application/json`
@@ -1302,8 +1444,9 @@ The project follows a modular structure:
   - **Success Code:** `200`
 
     ~~~json
-
-
+    {
+    "success": "Operation successful."
+    }
     ~~~
 
   - **Error Code:** `404`
