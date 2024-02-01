@@ -38,6 +38,7 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [3. View Paper by ID](#3-view-paper-by-id)
     - [4. Update Paper by ID](#4-update-paper-by-id)
     - [5. Delete Paper by ID](#5-delete-paper-by-id)
+    - [6. View All Papers ID](#6-view-all-papers-id)
   - [Sales](#sales)
     - [1. Create Sales](#1-create-sales)
     - [2. View All Sales](#2-view-all-sales)
@@ -1198,7 +1199,53 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
+### 6. View All Papers ID
 
+- **Endpoint:** 
+    ```md
+    143.110.190.164:3002/admin/papers/find/paperID
+    ```
+- **Method:** `GET`
+- **Description:** View all papers' ID.
+- **Response Format:** `application/json`
+  - **Success Code:** `200`
+    ~~~json
+    {
+      "success": "Data retrieved successfully.",
+      "data": [
+          "PAP000001",
+          "PAP000002",
+          "PAP000003",
+          "PAP000004",
+          "PAP000005",
+          "PAP000006",
+          "PAP000007",
+          "PAP000008",
+          "PAP000009",
+          "PAP000011",
+          "PAP000012",
+          "PAP000016",
+          "PAP000017",
+          "PAP000018",
+          "PAP000019",
+          "PAP000020",
+          "PAP000021",
+          "PAP000022",
+          "PAP000023",
+          "PAP000024",
+          "PAP000025"
+      ]
+    }
+    ~~~
+
+  - **Error Code:** `500`
+
+    ~~~json
+    {
+      "error": "Error accessing the database."
+    }
+    ~~~
+    <hr>
 ## Sales
 
 
