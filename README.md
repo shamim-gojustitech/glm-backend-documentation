@@ -784,7 +784,7 @@ The project follows a modular structure:
 
 - **Endpoint:**
      ```md
-    143.110.190.164:3002/admin/accounts/report/day
+    143.110.190.164:3002/admin/accounts/report/date
     ```
 - **Method:** `GET`
 - **Description:** Gets date-wise accounts data for the specified date range.
@@ -1746,7 +1746,7 @@ The project follows a modular structure:
 
 - **Endpoint:**
      ```md
-    143.110.190.164:3002/admin/sales/report/day
+    143.110.190.164:3002/admin/sales/report/date
     ```
 - **Method:** `GET`
 - **Description:** Gets date-wise sales data for the specified date range.
