@@ -32,6 +32,8 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [3. View Account by ID](#3-view-account-by-id)
     - [4. Update Account by ID](#4-update-account-by-id)
     - [5. Delete Account by ID](#5-delete-account-by-id)
+    - [6. Get Expense Report](#6-get-expense-report)
+    - [7. Get Date-Wise Account Data](#7-get-date-wise-account-data)
   - [Paper Section](#paper-section)
     - [1. Create Paper](#1-create-paper)
     - [2. View All Papers](#2-view-all-papers)
@@ -45,6 +47,8 @@ The GLM Management System is a specialized Node.js application developed for a l
     - [3. View Sales by ID](#3-view-sales-by-id)
     - [4. Update Sale by ID](#4-update-sale-by-id)
     - [5. Delete Sale by ID](#5-delete-sale-by-id)
+    - [6. Get Sales Report](#6-get-sales-report)
+    - [7. Get Date-Wise Sales Data](#7-get-date-wise-sales-data)
 - [Employee](#employee)
   - [Khotiyan](#khotiyan-1)
     - [1. Create Khotiyan](#1-create-khotiyan-1)
@@ -722,6 +726,97 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
+### 6. Get Expense Report
+- **Endpoint:**
+   ```md
+    143.110.190.164:3002/admin/accounts/report
+    ```
+- **Method:** `GET`
+- **Description:** Generates an account report based on the specified date range.
+- **Query Parameters:**
+  - `startDate` (required): Start date in 'YYYY-MM-DD' format.
+  - `endDate` (required): End date in 'YYYY-MM-DD' format.
+- **Response Format:** `application/json`
+  - **Success Code:** `200 OK`
+    ```json
+    {
+        "success": "Data retrieved successfully.",
+        "data": {
+            "startDate": "2024-01-01T00:00:00.000Z",
+            "endDate": "2024-01-23T17:59:59.999Z",
+            "total": 166,
+            "expenses": [
+                {
+                    "_id": "65b906572bbc4eecbd7786e8",
+                    "accountID": "ACC000001",
+                    "date": "2024-01-03T00:00:00.000Z",
+                    "project_name": "saa",
+                    "khotiyan_name": "sa",
+                    "rate": 89,
+                    "quantity": 56,
+                    "amount": 90,
+                    "__v": 0
+                },
+                {
+                    "_id": "65b90bf72bbc4eecbd7786fd",
+                    "accountID": "ACC000003",
+                    "date": "2024-01-02T00:00:00.000Z",
+                    "project_name": "nhh",
+                    "khotiyan_name": "sa",
+                    "rate": 89,
+                    "quantity": 56,
+                    "amount": 76,
+                    "__v": 0
+                }
+            ]
+        }
+    }
+    ```
+  - **Error Code:** `400 Bad Request`
+    ```json
+    {
+      "error": "Invalid date format."
+    }
+    ```
+    <hr>
+
+### 7. Get Date-Wise Account Data
+
+- **Endpoint:**
+     ```md
+    143.110.190.164:3002/admin/accounts/report/date
+    ```
+- **Method:** `GET`
+- **Description:** Gets date-wise accounts data for the specified date range.
+- **Query Parameters:**
+  - `startDate` (required): Start date in 'YYYY-MM-DD' format.
+  - `endDate` (required): End date in 'YYYY-MM-DD' format.
+- **Response Format:** `application/json`
+  - **Success Code:** `200 OK`
+    ```json
+    {
+        "success": "Data retrieved successfully.",
+        "data": [
+            {
+                "totalExpenses": 76,
+                "count": 1,
+                "_date": "2024-01-02"
+            },
+            {
+                "totalExpenses": 90,
+                "count": 1,
+                "_date": "2024-01-03"
+            }
+        ]
+    }
+    ```
+  - **Error Code:** `400 Bad Request`
+    ```json
+    {
+      "error": "Invalid date format."
+    }
+    ```
+    <hr>
 
 ## Paper Section
 
@@ -744,7 +839,7 @@ The project follows a modular structure:
   khotiyans[0][dags][1][jomir_poriman]:90
   khotiyans[0][sa_khotiyan]:aa
   khotiyans[0][rs_khotiyan]:aa
-  khotiyans[0][brotoman_kharij_khotiyan]:aa
+  khotiyans[0][bortoman_kharij_khotiyan]:aa
   khotiyans[0][mouja_name]:aa
   khotiyans[0][project_name]:aa
   khotiyans[0][shompottir_biboron]:aa
@@ -756,7 +851,7 @@ The project follows a modular structure:
   khotiyans[1][dags][1][jomir_poriman]:50
   khotiyans[1][sa_khotiyan]:bb
   khotiyans[1][rs_khotiyan]:bb
-  khotiyans[1][brotoman_kharij_khotiyan]:bb
+  khotiyans[1][bortoman_kharij_khotiyan]:bb
   khotiyans[1][mouja_name]:bb
   khotiyans[1][project_name]:bb
   khotiyans[1][shompottir_biboron]:bb
@@ -1547,7 +1642,143 @@ The project follows a modular structure:
     }
     ~~~
     <hr>
+### 6. Get Sales Report
+- **Endpoint:**
+   ```md
+    143.110.190.164:3002/admin/sales/report
+    ```
+- **Method:** `GET`
+- **Description:** Generates an sales report based on the specified date range.
+- **Query Parameters:**
+  - `startDate` (required): Start date in 'YYYY-MM-DD' format.
+  - `endDate` (required): End date in 'YYYY-MM-DD' format.
+- **Response Format:** `application/json`
+  - **Success Code:** `200 OK`
+    ```json
+    {
+        "success": "Data retrieved successfully.",
+        "data": {
+            "startDate": "2024-01-01T00:00:00.000Z",
+            "endDate": "2024-01-11T17:59:59.999Z",
+            "total": 246,
+            "sales": [
+                {
+                    "_id": "65bccdaf60d0b65e69336ffd",
+                    "saleID": "SAL000007",
+                    "paperID": "PAP000012",
+                    "mouja_name": "aa",
+                    "project_name": "aa",
+                    "rs_dag": "a123",
+                    "bortoman_kharij_khotiyan": "aa",
+                    "mot_jomir_poriman": 20,
+                    "price": 123,
+                    "plot_number": "A123",
+                    "grohitas": [
+                        {
+                            "name": "new aa",
+                            "_id": "65bb76fb60d0b65e69336e5b"
+                        }
+                    ],
+                    "datas": [
+                        {
+                            "name": "aa",
+                            "sale_ongsho": 10,
+                            "_id": "65bb76fb60d0b65e69336e5d"
+                        },
+                        {
+                            "name": "bb",
+                            "sale_ongsho": 10,
+                            "_id": "65bb76fb60d0b65e69336e5e"
+                        }
+                    ],
+                    "__v": 1,
+                    "date": "2024-01-02T00:00:00.000Z"
+                },
+                {
+                    "_id": "65bd3a6960d0b65e693371be",
+                    "saleID": "SAL000008",
+                    "paperID": "PAP000012",
+                    "mouja_name": "aa",
+                    "project_name": "aa",
+                    "rs_dag": "a123",
+                    "bortoman_kharij_khotiyan": "aa",
+                    "mot_jomir_poriman": 20,
+                    "price": 123,
+                    "plot_number": "A123",
+                    "grohitas": [
+                        {
+                            "name": "new aa",
+                            "_id": "65bd3a6960d0b65e693371bf"
+                        },
+                        {
+                            "name": "new bb",
+                            "_id": "65bd3a6960d0b65e693371c0"
+                        }
+                    ],
+                    "datas": [
+                        {
+                            "name": "aa",
+                            "sale_ongsho": 10,
+                            "_id": "65bd3a6960d0b65e693371c1"
+                        },
+                        {
+                            "name": "bb",
+                            "sale_ongsho": 10,
+                            "_id": "65bd3a6960d0b65e693371c2"
+                        }
+                    ],
+                    "__v": 0,
+                    "date": "2024-01-01T00:00:00.000Z"
+                }
+            ]
+        }
+    }
+    ```
+  - **Error Code:** `400 Bad Request`
+    ```json
+    {
+      "error": "Invalid date format."
+    }
+    ```
+    <hr>
 
+### 7. Get Date-Wise Sales Data
+
+- **Endpoint:**
+     ```md
+    143.110.190.164:3002/admin/sales/report/date
+    ```
+- **Method:** `GET`
+- **Description:** Gets date-wise sales data for the specified date range.
+- **Query Parameters:**
+  - `startDate` (required): Start date in 'YYYY-MM-DD' format.
+  - `endDate` (required): End date in 'YYYY-MM-DD' format.
+- **Response Format:** `application/json`
+  - **Success Code:** `200 OK`
+    ```json
+    {
+        "success": "Data retrieved successfully.",
+        "data": [
+            {
+                "totalsales": 123,
+                "count": 1,
+                "_date": "2024-01-01"
+            },
+            {
+                "totalsales": 123,
+                "count": 1,
+                "_date": "2024-01-02"
+            }
+        ]
+    }
+    ```
+  - **Error Code:** `400 Bad Request`
+    ```json
+    {
+      "error": "Invalid date format."
+    }
+    ```
+    <hr>
 # Employee
 
 ## Khotiyan
