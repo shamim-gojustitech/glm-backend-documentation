@@ -1223,14 +1223,58 @@ The project follows a modular structure:
 - **Request Format:** `application/json`
 
   ~~~json
-  {
-    "date": "2024-01-25",
-    "project_name": "Updated Project",
-    "rate": 12.75,
-    "quantity": 7,
-    "amount": 89.25,
-    "details": "Updated details about the project"
-  }
+  khotiyans[0][dags][0][sa_dag]:a123
+  khotiyans[0][dags][0][rs_dag]:a123
+  khotiyans[0][dags][0][jomir_poriman]:70
+  khotiyans[0][dags][1][sa_dag]:b123
+  khotiyans[0][dags][1][rs_dag]:b123
+  khotiyans[0][dags][1][jomir_poriman]:90
+  khotiyans[0][sa_khotiyan]:aa
+  khotiyans[0][rs_khotiyan]:aa
+  khotiyans[0][bortoman_kharij_khotiyan]:aa
+  khotiyans[0][mouja_name]:aa
+  khotiyans[0][project_name]:aa
+  khotiyans[0][shompottir_biboron]:aa
+  khotiyans[1][dags][0][sa_dag]:bb
+  khotiyans[1][dags][0][rs_dag]:bb
+  khotiyans[1][dags][0][jomir_poriman]:80
+  khotiyans[1][dags][1][sa_dag]:dd
+  khotiyans[1][dags][1][rs_dag]:dd
+  khotiyans[1][dags][1][jomir_poriman]:50
+  khotiyans[1][sa_khotiyan]:bb
+  khotiyans[1][rs_khotiyan]:bb
+  khotiyans[1][bortoman_kharij_khotiyan]:bb
+  khotiyans[1][mouja_name]:bb
+  khotiyans[1][project_name]:bb
+  khotiyans[1][shompottir_biboron]:bb
+  maliks[0][name]:aa
+  maliks[0][nid]:aa
+  maliks[0][mobile_number]:aa
+  maliks[0][father_name]:aa
+  maliks[0][address]:aa
+  maliks[0][jomi][0][rs_dag]:a123
+  maliks[0][jomi][0][poriman]:40
+  maliks[0][jomi][1][rs_dag]:b123
+  maliks[0][jomi][1][poriman]:60
+  maliks[0][maliker_jomir_poriman]:100
+  maliks[1][name]:bb
+  maliks[1][nid]:bb
+  maliks[1][mobile_number]:bb
+  maliks[1][father_name]:bb
+  maliks[1][address]:bb
+  maliks[1][jomi][0][rs_dag]:a123
+  maliks[1][jomi][0][poriman]:30
+  maliks[1][jomi][1][rs_dag]:b123
+  maliks[1][jomi][1][poriman]:30
+  maliks[1][maliker_jomir_poriman]:150
+  dolil[0][name]:pp
+  dolil[0][type]:pp
+  dolil[1][name]:qq
+  dolil[1][type]:qq
+  potinidhi:nn
+  mot_kroymullo:180
+  dolil[0][file]:
+  dolil[1][file]:
   ~~~
 
 - **Response Format:** `application/json`
